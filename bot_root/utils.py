@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 BIRD_IMAGE = Image.open("resources/bird.jpeg")
-FONT = ImageFont.truetype("resources/Impact.ttf", 100)
+FONT = ImageFont.truetype("resources/Impact.ttf", 120)
 
 
 def get_token(token_file):
@@ -29,7 +29,7 @@ def create_bird_image(text):
 
     bird_image = BIRD_IMAGE.copy()
     bird_draw = ImageDraw.Draw(bird_image)
-    bird_draw.text((0, 0), "DAMN!!!!", font=FONT, fill=(255, 255, 255))
+    bird_draw.text((0, 0), text, font=FONT, fill=(255, 255, 255))
 
     logger.success("Bird image generated successfully.")
     return bird_image

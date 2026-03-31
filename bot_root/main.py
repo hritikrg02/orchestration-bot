@@ -37,7 +37,14 @@ async def on_message(message):
     if message.channel.id in CHANNEL_IDS:
         if "tion" in message.content:
             logger.info(f"Triggered bird creation on: {message.content}")
-            bird = create_bird_image("test")
+
+            text = ""
+            words = message.content.split(" ")
+            for w in words:
+                if "tion" in w:
+                    text = f"{w.upper()}!!!"
+
+            bird = create_bird_image(text)
 
             buffer = BytesIO()
             bird.save(buffer, format="JPEG")
