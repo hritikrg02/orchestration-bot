@@ -5,9 +5,7 @@
 import discord
 from discord.ext import commands
 from loguru import logger
-from glob import glob
 from io import BytesIO
-from PIL import Image
 
 from utils import get_token, create_bird_image
 
@@ -16,7 +14,7 @@ from utils import get_token, create_bird_image
 TOKEN_FILE = "bot_root/token.txt"
 TOKEN = get_token(TOKEN_FILE)
 
-CHANNEL_IDS = [1223003631293431851]
+CHANNEL_IDS = [673011713750073354]
 
 # discord stuff
 
