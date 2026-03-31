@@ -3,10 +3,11 @@
 # author:       Hritik "Ricky" Saynganthone | hritikrg02@gmail.com
 
 from loguru import logger
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 
-BIRD_IMAGE = Image.open("images/bird.jpeg")
+BIRD_IMAGE = Image.open("resources/bird.jpeg")
+FONT = ImageFont.truetype("resources/Impact.ttf", 100)
 
 
 def get_token(token_file):
@@ -25,5 +26,10 @@ def get_token(token_file):
 
 def create_bird_image(text):
     logger.info("Generate bird image initiated.")
+
+    bird_image = BIRD_IMAGE.copy()
+    bird_draw = ImageDraw.Draw(bird_image)
+    bird_draw.text((0, 0), "DAMN!!!!", font=FONT, fill=(255, 255, 255))
+
     logger.success("Bird image generated successfully.")
-    return BIRD_IMAGE
+    return bird_image
