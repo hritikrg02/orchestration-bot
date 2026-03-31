@@ -33,13 +33,13 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     if message.channel.id in CHANNEL_IDS:
-        if "tion" in message.content:
+        if "tion" in message.content.lower():
             logger.info(f"Triggered bird creation on: {message.content}")
 
             text = ""
             words = message.content.split(" ")
             for w in words:
-                if "tion" in w:
+                if "tion" in w.lower():
                     text = f"{w.upper()}!!!"
 
             bird = create_bird_image(text)
