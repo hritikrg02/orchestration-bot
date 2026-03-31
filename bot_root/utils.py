@@ -4,7 +4,9 @@
 
 from loguru import logger
 from PIL import Image
-from random import choice
+
+
+BIRD_IMAGE = Image.open("images/bird.jpeg")
 
 
 def get_token(token_file):
@@ -19,3 +21,9 @@ def get_token(token_file):
 
     logger.success("Token successfully parsed.")
     return token
+
+
+def create_bird_image(text):
+    logger.info("Generate bird image initiated.")
+    logger.success("Bird image generated successfully.")
+    return BIRD_IMAGE
