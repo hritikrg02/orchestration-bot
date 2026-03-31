@@ -1,0 +1,11 @@
+name: gso-april-fools-2026
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - discord.py
+  - pillow
+  - ipython
+  - loguru
+  - python=3.12
+prefix: /opt/homebrew/Caskroom/miniconda/base/envs/gso-april-fools-2026

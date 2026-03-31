@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  gso-gacha:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/orchestration-bot/
+    container_name: orchestration-bot
+    volumes:
+      - ../orchestration-bot:/app/orchestration-bot/
