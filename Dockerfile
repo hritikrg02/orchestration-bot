@@ -3,7 +3,7 @@ FROM continuumio/miniconda3
 COPY environment.yml .
 RUN conda env create -f environment.yml
 
-# conda run uses gso-april-fools-2024
+# conda run uses gso-april-fools-2026
 SHELL ["conda", "run", "-n", "gso-april-fools-2026", "/bin/bash", "-c"]
 
 # sanity check
