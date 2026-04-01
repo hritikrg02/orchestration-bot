@@ -15,6 +15,7 @@ TOKEN_FILE = "bot_root/token.txt"
 TOKEN = get_token(TOKEN_FILE)
 
 CHANNEL_IDS = [673011713750073354]
+# CHANNEL_IDS = [673011713750073354, 673010571926568979, 364810641384538116, 521560661642313729, 884198330580742214, 505479223750819840, 431491107394813952, 1012874671806480495, 1284996328635633766]
 
 # discord stuff
 
@@ -48,7 +49,7 @@ async def on_message(message):
             bird.save(buffer, format="JPEG")
             buffer.seek(0)
 
-            f = discord.File(buffer, filename="composite.jpg")
+            f = discord.File(buffer, filename=f"{text}-bird.jpg")
             await message.channel.send(file=f)
             logger.success(f"Bird sent.")
 
